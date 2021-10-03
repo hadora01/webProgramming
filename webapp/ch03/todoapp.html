@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습 3-2</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+
+<script>
+	function addItem(){
+		//ul 요소 가져옴 (li를 ul에 넣기 위해서, ul을 가져오는 )
+		let list = document.getElementById('todolist');
+		//입력값을 읽어옴
+		let todo = document.getElementById('item');
+		//새로운 li 요소를 생성
+		let listitem = document.createElement('li');
+		//li 요소에 들어갈 닫기 버튼 생성
+		let xbtn = document.createElement('button');
+		
+		listitem.className = 'd-flex list-group-item list-group-item-action list-group-item-warning';
+		xbtn.className = 'btn-close ms-auto';
+		
+		//close 버튼에 이벤트 처리
+		xbtn.onclick = function(e){
+			//이벤트가 발생한 li요소를 구해서  ul요소에서 제거
+			let pnode = e.target.parentNode; //이벤트가 발생한 버튼의 부모요소, 즉 li요소를 가져옴
+			list.removeChild(pnode);
+		}
+		// li 요소 구성
+		listitem.innerText = todo.value;
+		listitem.appendChild(xbtn);
+		
+		//ul요소에 li요소 추가
+		list.appendChild(listitem);
+		
+		//입력칸 비우기 및 포커스 이동
+		todo.value = '';
+		todo.focus();
+		
+		
+	}
+
+</script>
+</head>
+<body>
+<div class = "container bg-warning shadow mx-auto mt-5 p-5 w-75">
+	<h2> My ToDo App</h2>
+	<hr>
+	
+	<div class ="input-group">
+	<input id = "item" class = "form-control" type ="text" placeholder = "할일을 입력하세요.." onkeyup="if(window.event.keyCode==13){addItem()}">
+	<button type = "button" class = "btn btn-primary" onClick = "addItem()">할일추가</button>
+	</div>
+	<hr>
+	<ul id = "todolist" class = "list-group"></ul>
+	
+</div>
+</body>
+</html>
