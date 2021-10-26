@@ -13,10 +13,13 @@
 	function addItem(){
 		//ul 요소 가져옴 (li를 ul에 넣기 위해서, ul을 가져오는 )
 		let list = document.getElementById('todolist');
+		
 		//입력값을 읽어옴
 		let todo = document.getElementById('item');
+		
 		//새로운 li 요소를 생성
 		let listitem = document.createElement('li');
+		
 		//li 요소에 들어갈 닫기 버튼 생성
 		let xbtn = document.createElement('button');
 		
@@ -46,7 +49,7 @@
 </script>
 </head>
 <body>
-<div class = "container bg-warning shadow mx-auto mt-5 p-5 w-75">
+<div class = "container bg-primary shadow mx-auto mt-5 p-5 w-75">
 	<h2> My ToDo App</h2>
 	<hr>
 	
