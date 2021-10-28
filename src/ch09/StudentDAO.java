@@ -18,7 +18,8 @@ public class StudentDAO {
 			Class.forName(JDBC_DRIVER);
 			conn=DriverManager.getConnection(JDBC_URL,"jwbook","0000");
 			
-		}catch(Exception e) {e.printStackTrace();}
+		}catch(Exception e) {e.printStackTrace();
+		System.out.println("연결이 안됌");}
 	}
 	public void close() {
 		try {
@@ -50,7 +51,7 @@ public class StudentDAO {
 		List<Student> students =new ArrayList<>();
 		
 		try {
-			pstmt=conn.prepareStatement("select*from studnet");
+			pstmt=conn.prepareStatement("SELECT * FROM STUDENT;"); //여기서 실수주의
 			ResultSet rs=pstmt.executeQuery();
 			while(rs.next()) {
 				Student s=new Student();

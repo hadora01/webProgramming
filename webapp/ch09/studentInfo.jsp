@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>학생정보 db table</h2>
+	<h2>학생정보 db table</h2><a href="/jwbook/studentControl">새로고침</a>
 	<hr>
 	<table border ="2">
 	<tr>
@@ -32,7 +32,7 @@
 	<hr>
 	<h2>학생추가</h2>
 	<hr>
-	<form method="post" action="/jwbook/StudentControl?action=insert">
+	<form method="post" action="/jwbook/studentControl?action=insert">
 		<label>이름</label>
 		<input type ="text" name="username"><br>
 		<label>대학</label>

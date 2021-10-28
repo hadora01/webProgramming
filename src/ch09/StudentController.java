@@ -16,7 +16,7 @@ import org.apache.commons.beanutils.BeanUtils;
 /**
  * Servlet implementation class StudentController
  */
-@WebServlet("/StudentControl")
+@WebServlet("/studentControl")
 public class StudentController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	StudentDAO dao;
