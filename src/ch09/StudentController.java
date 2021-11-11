@@ -36,8 +36,8 @@ public class StudentController extends HttpServlet {
 			.forward(request, response);
 		} else {
 			switch (action) {
-			case "list":view=list(request,response);break;
-			case "insert":view=insert(request,response);break;
+			case "list": view=list(request,response);break;
+			case "insert": view = insert(request,response); break;
 			}
 			getServletContext().getRequestDispatcher("/ch09/"+view)
 			.forward(request, response);
